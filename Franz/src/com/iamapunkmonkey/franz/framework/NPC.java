@@ -1,7 +1,7 @@
 package com.iamapunkmonkey.franz.framework;
 
-public class Enemy extends Character {
-	public Enemy(){
+public class NPC extends Character {
+	public NPC(){
 		super();
 	}
 

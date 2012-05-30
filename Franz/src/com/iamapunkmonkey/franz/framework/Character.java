@@ -13,13 +13,20 @@ public abstract class Character implements ICharacter {
 	private FranzMap<String, IEntity> _children;
 	
 	public Character(){
-		_eventList = new FranzMap<String, IEntityEventListener>();
-		_children = new FranzMap<String, IEntity>();
+		_eventList = new FranzMap<String, IEntityEventListener>("root");
+		_children = new FranzMap<String, IEntity>("root");
+		_healthUp = 0;
+		_healthDown = 0;
 	}
 	
 	@Override
 	public void addChild(String name, IEntity child) {
 		_children.insert(name, child);
+	}
+	
+	@Override
+	public IEntity getChild(String name){
+		return _children.findNode(name).getValue();
 	}
 
 	@Override
@@ -52,5 +59,4 @@ public abstract class Character implements ICharacter {
 	public IEntityEventListener getEventListener(String name) {
 		return _eventList.findNode(name).getValue();
 	}
-
 }

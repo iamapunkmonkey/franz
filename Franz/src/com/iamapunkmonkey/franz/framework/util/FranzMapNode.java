@@ -36,7 +36,7 @@ public class FranzMapNode<K, V> {
 
 	private void insertChild(FranzMapNode<K, V> node)
 	{
-		if(child != null){
+		if(child == null){
 			child = node;
 			child.setParent(this);
 		} else {

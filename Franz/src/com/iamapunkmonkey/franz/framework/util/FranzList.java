@@ -60,9 +60,16 @@ public class FranzList<V> {
 	public V get(int index){
 		
 		temp = head;
-		for(int i = 0; i < index; i++)
-			temp = temp.next;
-		return temp.element;
+		//for(int i = 0; i < index; i++)
+		//	temp = temp.next;
+		return get(0, temp, index).element;
+	}
+	
+	private FranzNode<V> get(int i, FranzNode<V> t, int index){
+		if(index == i)
+			return t;
+		
+		return get(i + 1, t.next, index);
 	}
 	
 	public int get(V elem){
@@ -73,10 +80,21 @@ public class FranzList<V> {
 		temp = head;
 		int i = 0;
 		
-		for(; !(temp.element).equals(elem) && temp != null; i++)
-			temp = temp.next;
+		//for(; !(temp.element).equals(elem) && temp != null; i++)
+		//	temp = temp.next;
 		
-		return (i == size()) ? -1 : i;
+		//return (i == size()) ? -1 : i;
+		return indexOf(i, temp, elem);
+	}
+	
+	private int indexOf(int i, FranzNode<V> t, V elem){
+		if(t == null)
+			return -1;
+		
+		if(t.element.equals(elem))
+			return i;
+		
+		return indexOf(i + 1, t.next, elem);
 	}
 	
 	public V remove(int index){
@@ -139,56 +157,4 @@ public class FranzList<V> {
 		counter--;
 		return spare;
 	}
-	
-/*	FranzNode<V> header;
-	
-	public FranzList(){
-		header = new FranzNode<V>(null);
-	}
-	
-	public boolean isEmpty(){
-		return header.next == null;
-	}
-	
-	public void makeEmpty(){
-		header.next = null;
-	}
-	
-	public FranzListIterator<V> zeroth(){
-		return new FranzListIterator<>(header);
-	}
-	
-	public FranzListIterator<V> first(){
-		return new FranzListIterator<>(header.next);
-	}
-	
-	public void insert(V x, FranzListIterator<V> p){
-		if(p != null && p.current != null)
-			p.current.next = new FranzNode<V>(x, p.current.next);
-	}
-	
-	public FranzListIterator<V> find(V x){
-		FranzNode<V> itr = header.next;
-		
-		while(itr != null && !itr.element.equals(x))
-			itr = itr.next;
-		
-		return new FranzListIterator<>(itr);
-	}
-	
-	public FranzListIterator<V> findPrevious(V x){
-		FranzNode<V> itr = header;
-		
-		while(itr.next != null && !itr.next.element.equals(x))
-			itr = itr.next;
-		
-		return new FranzListIterator<>(itr);
-	}
-	
-	public void remove(V x){
-		FranzListIterator<V> p = findPrevious(x);
-		
-		if(p.current.next != null)
-			p.current.next = p.current.next.next;
-	}*/
 }
