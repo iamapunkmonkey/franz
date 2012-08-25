@@ -1,11 +1,12 @@
 package com.iamapunkmonkey.franz.framework;
 
+import com.iamapunkmonkey.franz.framework.graphics.FranzSpriteBase;
 import com.iamapunkmonkey.franz.framework.structure.ICharacter;
 import com.iamapunkmonkey.franz.framework.structure.IEntity;
 import com.iamapunkmonkey.franz.framework.structure.IEntityEventListener;
 import com.iamapunkmonkey.franz.framework.util.FranzMap;
 
-public abstract class Character implements ICharacter {
+public abstract class Character extends FranzSpriteBase implements ICharacter {
 	private int _healthUp;
 	private int _healthDown;
 	

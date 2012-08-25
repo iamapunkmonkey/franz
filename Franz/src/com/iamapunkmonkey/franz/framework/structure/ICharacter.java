@@ -1,6 +1,6 @@
 package com.iamapunkmonkey.franz.framework.structure;
 
-public interface ICharacter extends IEntity {
+public interface ICharacter {
 	int getHealth();
 	void setHealth(int value);
 	void addHealth(int toAdd);

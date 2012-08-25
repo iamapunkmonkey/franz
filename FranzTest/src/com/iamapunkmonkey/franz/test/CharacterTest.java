@@ -4,7 +4,6 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import com.iamapunkmonkey.franz.framework.Character;
 import com.iamapunkmonkey.franz.framework.NPC;
 import com.iamapunkmonkey.franz.framework.structure.IEntityEventListener;
 

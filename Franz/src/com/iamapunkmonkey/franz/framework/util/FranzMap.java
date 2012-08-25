@@ -3,6 +3,10 @@ package com.iamapunkmonkey.franz.framework.util;
 public class FranzMap<K, V> {
 	FranzMapNode<K, V> rootNode;
 	
+	public FranzMap(){
+		this((K)"root");
+	}
+	
 	public FranzMap(K rootKey) {
 		create(rootKey);
 	}
@@ -44,5 +48,9 @@ public class FranzMap<K, V> {
 	
 	public FranzMapNode<K, V> findNode(K key){
 		return (rootNode != null) ? rootNode.findNode(key) : null;
+	}
+	
+	public V get(K key){
+		return (rootNode != null) ? rootNode.findNode(key).getValue() : null;
 	}
 }
