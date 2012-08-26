@@ -2,7 +2,7 @@ package com.iamapunkmonkey.franz.framework.util;
 
 public class FranzList<V> {
 	
-	private FranzNode<V> head = null;
+	public FranzNode<V> head = null;
 	private FranzNode<V> tail = null;
 	private FranzNode<V> temp = null;
 	
