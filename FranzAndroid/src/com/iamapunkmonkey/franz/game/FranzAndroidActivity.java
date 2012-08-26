@@ -1,13 +1,14 @@
 package com.iamapunkmonkey.franz.game;
 
-import android.app.Activity;
 import android.os.Bundle;
 
-public class FranzAndroidActivity extends Activity {
-    /** Called when the activity is first created. */
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.main);
-    }
+import com.iamapunkmonkey.franz.framework.FranzActivity;
+
+public class FranzAndroidActivity extends FranzActivity {
+	@Override
+	public void onCreate(Bundle savedInstanceState){
+		super.onCreate(savedInstanceState);
+		
+		
+	}
 }

@@ -14,8 +14,14 @@ public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callb
 	public static int SCREEN_HEIGHT = 800;
 	private FranzGLRenderer mRenderer;
 	
+	private FranzGameThread _gameThread;
+	
 	public FranzGamePanel(Context context) {
 		super(context);
+		
+		getHolder().addCallback(this);
+		
+		setFocusable(true);
 		
 		setEGLContextClientVersion(2);
 		
@@ -23,6 +29,13 @@ public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callb
 		setRenderer(mRenderer);
 		
 		setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
+		
+		_gameThread = new FranzGameThread(getHolder(), this);
+	}
+	
+	public void startGameLoop(){
+		_gameThread.startGame();
+		_gameThread.start();
 	}
 	
 	private final float TOUCH_SCALE_FACTOR = 180.0f / 320;
@@ -43,5 +56,17 @@ public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callb
 		float y = e.getY();
 		
 		return FranzGameManager.GetGameManager().processTouch(x, y, e.getAction());
+	}
+	
+	@Override
+	public void surfaceDestroyed(SurfaceHolder holder){
+		boolean retry = true;
+		while(retry){
+			try {
+				_gameThread.join();
+				retry = false;
+			} catch (InterruptedException e) {
+			}
+		}
 	}
 }
