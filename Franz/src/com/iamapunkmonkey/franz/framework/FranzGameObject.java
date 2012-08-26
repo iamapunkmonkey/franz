@@ -10,7 +10,7 @@ public abstract class FranzGameObject extends FranzSpriteBase {
 	private FranzMap<String, IEntityEventListener> _eventList;
 	private FranzMap<String, IEntity> _children;
 	
-	private String currentEvent = "default";
+	private String _currentEvent = "default";
 	
 	public FranzGameObject(){
 		super();
@@ -20,11 +20,11 @@ public abstract class FranzGameObject extends FranzSpriteBase {
 	}
 	
 	public void setCurrentEvent(String event){
-		this.currentEvent = event;
+		this._currentEvent = event;
 	}
 	
 	public String getCurrentEvent(){
-		return currentEvent;
+		return _currentEvent;
 	}
 	
 	@Override
@@ -59,12 +59,12 @@ public abstract class FranzGameObject extends FranzSpriteBase {
 	
 	@Override
 	public void addCurrentEventListener(IEntityEventListener event){
-		_eventList.insert(currentEvent, event);
+		_eventList.insert(_currentEvent, event);
 	}
 
 	@Override
 	public IEntityEventListener getCurrentEventListener(){
-		IEntityEventListener returnValue = _eventList.findNode(currentEvent).getValue();
+		IEntityEventListener returnValue = _eventList.findNode(_currentEvent).getValue();
 		return (returnValue != null) ? returnValue : getEventListener();
 	}
 
