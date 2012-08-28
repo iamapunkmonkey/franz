@@ -4,6 +4,7 @@ import android.view.MotionEvent;
 
 import com.iamapunkmonkey.franz.framework.structure.IEntityEventListener;
 import com.iamapunkmonkey.franz.framework.structure.IRenderable;
+import com.iamapunkmonkey.franz.framework.util.FranzEntityEventException;
 import com.iamapunkmonkey.franz.framework.util.FranzList;
 import com.iamapunkmonkey.franz.framework.util.FranzListIterator;
 
@@ -17,7 +18,9 @@ public class FranzGameManager {
 		_gameObjects = new FranzList<FranzGameObject>();
 	}
 	
-	public void addGameObejct(FranzGameObject obj){
+	public void addGameObejct(FranzGameObject obj) throws FranzEntityEventException{
+		if(obj.getEventListener() == null)
+			throw new FranzEntityEventException("You need to create a default Entity Event.");
 		_gameObjects.insert(obj);
 	}
 	
