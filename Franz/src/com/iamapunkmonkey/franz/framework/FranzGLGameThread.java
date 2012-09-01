@@ -2,12 +2,12 @@ package com.iamapunkmonkey.franz.framework;
 
 import android.view.SurfaceHolder;
 
-public class FranzGameThread extends Thread {
+public class FranzGLGameThread extends Thread {
 	private boolean isRunning, isPaused;
 	private SurfaceHolder _surfaceHolder;
-	private FranzGamePanel _gamePanel;
+	private FranzGLGamePanel _gamePanel;
 	
-	public FranzGameThread(SurfaceHolder surfaceHolder, FranzGamePanel gamePanel){
+	public FranzGLGameThread(SurfaceHolder surfaceHolder, FranzGLGamePanel gamePanel){
 		super();
 		this._surfaceHolder = surfaceHolder;
 		this._gamePanel = gamePanel;

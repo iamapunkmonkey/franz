@@ -21,7 +21,7 @@ public class NPC extends Character {
 	}
 
 	@Override
-	public void draw(GL10 gl) {
+	public void draw(GL10 gl, float[] mProjMatrix) {
 		// TODO Auto-generated method stub
 		
 	}

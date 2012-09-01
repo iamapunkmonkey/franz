@@ -92,6 +92,24 @@ public class CharacterTest {
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public void onEventMove(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventPress(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventRelease(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
 		};
 		
 		NPC bob = new NPC();
@@ -110,12 +128,48 @@ public class CharacterTest {
 				// TODO Auto-generated method stub
 				
 			}
+
+			@Override
+			public void onEventMove(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventPress(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventRelease(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
 		};
 		
 		IEntityEventListener temp2 = new IEntityEventListener() {
 			
 			@Override
 			public void onEventPorcess() {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventMove(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventPress(float x, float y) {
+				// TODO Auto-generated method stub
+				
+			}
+
+			@Override
+			public void onEventRelease(float x, float y) {
 				// TODO Auto-generated method stub
 				
 			}

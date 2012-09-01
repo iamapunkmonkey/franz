@@ -4,19 +4,19 @@ import javax.microedition.khronos.opengles.GL10;
 
 import com.iamapunkmonkey.franz.framework.util.FranzList;
 
-public class FranzSpriteManager {
+public class FranzGLSpriteManager {
 	
-	FranzList<FranzSpriteBase> sprites;
+	FranzList<FranzGLSpriteBase> sprites;
 	
-	public FranzSpriteManager(){
-		sprites = new FranzList<FranzSpriteBase>();
+	public FranzGLSpriteManager(){
+		sprites = new FranzList<FranzGLSpriteBase>();
 	}
 	
-	public void addSprite(FranzSpriteBase sprite){
+	public void addSprite(FranzGLSpriteBase sprite){
 		sprites.insert(sprite);
 	}
 	
-	public void removeSprite(FranzSpriteBase sprite){
+	public void removeSprite(FranzGLSpriteBase sprite){
 		sprites.remove(sprite);
 	}
 	

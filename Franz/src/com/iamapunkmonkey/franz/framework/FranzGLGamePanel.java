@@ -8,15 +8,15 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.SurfaceHolder;
 
-public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callback {
+public class FranzGLGamePanel extends GLSurfaceView implements SurfaceHolder.Callback {
 	
 	public static int SCREEN_WIDTH = 480;
 	public static int SCREEN_HEIGHT = 800;
 	private FranzGLRenderer mRenderer;
 	
-	private FranzGameThread _gameThread;
+	private FranzGLGameThread _gameThread;
 	
-	public FranzGamePanel(Context context) {
+	public FranzGLGamePanel(Context context) {
 		super(context);
 		
 		getHolder().addCallback(this);
@@ -30,7 +30,7 @@ public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callb
 		
 		setRenderMode(GLSurfaceView.RENDERMODE_WHEN_DIRTY);
 		
-		_gameThread = new FranzGameThread(getHolder(), this);
+		_gameThread = new FranzGLGameThread(getHolder(), this);
 	}
 	
 	public void startGameLoop(){
@@ -45,8 +45,8 @@ public class FranzGamePanel extends GLSurfaceView implements SurfaceHolder.Callb
 
 	@Override
 	public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
-		FranzGamePanel.SCREEN_WIDTH = width;
-		FranzGamePanel.SCREEN_HEIGHT = height;
+		FranzGLGamePanel.SCREEN_WIDTH = width;
+		FranzGLGamePanel.SCREEN_HEIGHT = height;
 	}
 	
 	@Override

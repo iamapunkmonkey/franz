@@ -1,18 +1,18 @@
 package com.iamapunkmonkey.franz.framework;
 
-import com.iamapunkmonkey.franz.framework.graphics.FranzSpriteBase;
+import com.iamapunkmonkey.franz.framework.graphics.FranzGLSpriteBase;
 import com.iamapunkmonkey.franz.framework.structure.IEntity;
 import com.iamapunkmonkey.franz.framework.structure.IEntityEventListener;
-import com.iamapunkmonkey.franz.framework.structure.IRenderable;
+import com.iamapunkmonkey.franz.framework.structure.IGLRenderable;
 import com.iamapunkmonkey.franz.framework.util.FranzMap;
 
-public abstract class FranzGameObject extends FranzSpriteBase {
+public abstract class FranzGLGameObject extends FranzGLSpriteBase {
 	private FranzMap<String, IEntityEventListener> _eventList;
 	private FranzMap<String, IEntity> _children;
 	
 	private String _currentEvent = "default";
 	
-	public FranzGameObject(){
+	public FranzGLGameObject(){
 		super();
 		
 		_eventList = new FranzMap<String, IEntityEventListener>("Root");

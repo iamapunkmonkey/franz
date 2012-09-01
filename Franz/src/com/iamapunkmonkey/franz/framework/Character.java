@@ -2,7 +2,7 @@ package com.iamapunkmonkey.franz.framework;
 
 import com.iamapunkmonkey.franz.framework.structure.ICharacter;
 
-public abstract class Character extends FranzGameObject implements ICharacter {
+public abstract class Character extends FranzGLGameObject implements ICharacter {
 	private int _healthUp;
 	private int _healthDown;
 	

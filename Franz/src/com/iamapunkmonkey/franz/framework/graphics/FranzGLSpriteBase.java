@@ -11,9 +11,9 @@ import android.opengl.GLES20;
 import android.opengl.Matrix;
 
 import com.iamapunkmonkey.franz.framework.structure.IEntity;
-import com.iamapunkmonkey.franz.framework.structure.IRenderable;
+import com.iamapunkmonkey.franz.framework.structure.IGLRenderable;
 
-public abstract class FranzSpriteBase implements IRenderable {
+public abstract class FranzGLSpriteBase implements IGLRenderable {
 
 	private final String vertexShaderCode =
 		"uniform mat4 uMVPMatrix;" +
@@ -57,7 +57,7 @@ public abstract class FranzSpriteBase implements IRenderable {
 	
 	public volatile float mAngle;
 
-	public FranzSpriteBase(){
+	public FranzGLSpriteBase(){
 		ByteBuffer bb = ByteBuffer.allocateDirect(squareCoords.length * 4);
 		bb.order(ByteOrder.nativeOrder());
 		

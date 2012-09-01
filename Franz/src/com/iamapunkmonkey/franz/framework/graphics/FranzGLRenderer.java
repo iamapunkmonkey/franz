@@ -13,7 +13,7 @@ public class FranzGLRenderer implements GLSurfaceView.Renderer {
 	
 	private static final String TAG = "FranzGLRenderer";
 	
-	private FranzSpriteManager spriteManager;
+	private FranzGLSpriteManager spriteManager;
 	
 	private final float[] mProjMatrix = new float[16];
 	

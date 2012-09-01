@@ -2,7 +2,7 @@ package com.iamapunkmonkey.franz.framework.structure;
 
 import javax.microedition.khronos.opengles.GL10;
 
-public interface IRenderable extends IEntity {
+public interface IGLRenderable extends IEntity {
 	void init();
-	void draw();
+	void draw(GL10 gl, float[] mProjMatrix);
 }
